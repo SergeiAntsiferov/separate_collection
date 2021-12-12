@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    height: 100%;
+    /* background-image: linear-gradient(rgb(119, 189, 185), white); */
+    background-image: url('./background.png');
+    background-size: auto;
+    background-color: lightskyblue;
+    /* background-attachment: fixed; */
+    
+  }
+
+  .main__title {
+    width: 100vw;
+    padding: 8px;
+
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+  }
