@@ -1,12 +1,12 @@
 import React from 'react';
-// import { useEffect, useState } from 'react';
-// import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 import './garbageCard.css';
 
 
 
 const GarbageCard = (props) => {
+    //Деструктуризация пропсов
     const {name, title, image, description} = props;
 
     return (
@@ -14,11 +14,8 @@ const GarbageCard = (props) => {
         <div className="card">
             <h2 className="card__title">{title}</h2>
             <img className="card__image" src={image} alt={name} />
-            
             <p className="card__description">{description}</p>
-            <button className="button card__button" type='button'>
-                <Link to={`/card/${name}`}>more information</Link>
-            </button>
+            <Link to={`/card/${name}`}><Button>Подробнее</Button></Link>
         </div>
     );
 

@@ -1,9 +1,8 @@
 import React from 'react';
-import './LoginForm.css';
-// import Header from '././Components/Header/Header';
+import './Login.css';
 
 
-const LoginForm = () => {
+const Login = () => {
     return (
         <form className="form">
             <div className='form__block'>
@@ -22,4 +21,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default Login;

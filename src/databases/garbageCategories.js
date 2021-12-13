@@ -3,8 +3,8 @@ export const garbageCategories = [
 {   name: 'paper',
     title: 'Бумага',
     image: '././images/card-logo/paper.png',
-    dangerous: 'false',
-    recycleable: 'true',
+    dangerous: false,
+    recycleable: true,
     description: 'картон, книги, журналы, газеты, офисная бумага, бумажная упаковка'
 },
 
@@ -54,14 +54,6 @@ export const garbageCategories = [
     dangerous: true,
     recycleable: true,
     description: 'батарейки, аккумуляторы от телефонов, ноутбуков'
-},
-
-{   name: 'thermometers',
-    title: 'Градусники',
-    image: '././images/card-logo/thermometer.png',
-    dangerous: true,
-    recycleable: false,
-    description: 'ртутные градусники'
 },
 
 {   name: 'lamps',

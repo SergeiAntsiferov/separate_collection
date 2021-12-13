@@ -1,7 +1,8 @@
 import React from 'react';
 import './header.css';
 import {Link} from "react-router-dom";
-
+import Logo from '../Logo/Logo';
+import Button from '../Button/Button';
 
 
 const Header = () => {
@@ -9,10 +10,11 @@ const Header = () => {
  
         return (
             <header className="header">
-                <Link to="/">Главная</Link>
-                <Link to="/points">Пункты приёма</Link>
-                <Link to="/edit">Edit points</Link>
-                <Link to="/login"><button className='header__button'>Войти</button></Link>
+                <Logo/>
+                <Link className="header__link" to="/">Главная</Link>
+                <Link className="header__link" to="/points">Пункты приёма</Link>
+                <Link className="header__link" to="/about">О нас</Link>
+                <Link className="header__link" to="/login"><Button >Войти</Button></Link>
             </header>
         );
     }

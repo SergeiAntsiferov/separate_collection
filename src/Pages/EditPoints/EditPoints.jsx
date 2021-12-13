@@ -2,12 +2,12 @@ import React from 'react';
 // import './main.css';
 
 
-const EditRecievePoints = () => {
+const EditPoints = () => {
     return (
             <div className="main">
-            <h1 className="main__title">EditRecievePoints</h1>
+            <h1 className="main__title">EditPoints</h1>
             </div>   
     );
 };
 
-export default EditRecievePoints;
+export default EditPoints;

@@ -7,19 +7,18 @@ import './footer.css';
 
 const Footer = () => {
     return (
-        <>
-            <footer className="footer">
-                {socialMedia.map((item) => {
-                    return (
-                        <SocialMediaBage
-                        name={item.name}
-                        link={item.link}
-                        image={item.image}
-                        />
-                    )
-                })}
-            </footer>
-        </>
+        <footer className="footer">
+            {socialMedia.map((item) => {
+                return (
+                    <SocialMediaBage
+                    key = {item.name}
+                    name={item.name}
+                    link={item.link}
+                    image={item.image}
+                    />
+                )
+            })}
+        </footer>
     );
 };
 

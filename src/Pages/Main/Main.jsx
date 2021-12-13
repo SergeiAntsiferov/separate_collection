@@ -8,7 +8,7 @@ const Main = () => {
     return (
         <>    
             <div className="main">
-            <h1 className="main__title">Основные категории сортируемого мусора</h1>
+            <h1 className="main__title">Категории сортируемого мусора</h1>
                 {garbageCategories.map((item) => {
                     return (
                         <GarbageCard
@@ -17,7 +17,6 @@ const Main = () => {
                         name = {item.name}
                         description ={ item.description} 
                         key = {item.title}
-                        
                         />)
                     })
                 }

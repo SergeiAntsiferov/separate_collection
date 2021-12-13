@@ -64,13 +64,3 @@
     text-align: center;
     
 }
-
-.button {
-    width: 100%;
-    min-height: 28px;
-
-    background-color: beige;
-    border-radius: 8px;
-    border: none;
-
-}

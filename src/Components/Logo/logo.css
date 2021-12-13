@@ -1,0 +1,19 @@
+.logo {
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.logo__be {
+    color: #BF9B7A;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+
+;
+}
+
+.logo__eco {
+    color: #262626;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 32px;
+
+}

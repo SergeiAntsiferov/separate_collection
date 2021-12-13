@@ -1,15 +1,30 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-// import { garbageCategories } from '../../databases/garbageCategories';
+import CardDescription from '../../Components/CardDescription/CardDescription';
+import { cardDescriptions } from '../../databases/cardDescriptions';
 
 
 const CardPage = () => {
     const {name} = useParams()
-    console.log(name)
+
+    const page = cardDescriptions.find((item) => item.name === name)
+    console.log(page)
+
+    if (!page) {
+        return <div>
+            {`Страницы ${name} не существует`}
+        </div>
+    }
 
     return (
         <div>
-            <h1>{`CardPage ${name}`}</h1>
+            <CardDescription
+                title={page.title}
+                description={page.description} 
+                prepare={page.prepare}
+                accepted={page.accepted} 
+                notAccepted={page.notAccepted}
+            />
         </div>
     );
 };
