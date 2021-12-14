@@ -1,0 +1,11 @@
+.points {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.points__title {
+    width: 100%;
+    text-align: center;
+}

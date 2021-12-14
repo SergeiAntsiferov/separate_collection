@@ -1,11 +1,22 @@
 import React from 'react';
-// import './main.css';
-
+import GarbageBage from '../../Components/GarbageBage/GarbageBage';
+import {garbageCategories} from '../../databases/garbageCategories';
+import './points.css'
 
 const Points = () => {
     return (
-            <div className="main">
-            <h1 className="main__title">Points</h1>
+            <div className="points">
+            <h1 className="points__title">Пункты приёма</h1>
+            {garbageCategories.map((item) => {
+                return (
+                    <GarbageBage
+                    key = {item.title}
+                    image = {item.image}
+                    name = {item.name}
+                    title = {item.title}
+                    />)
+                })
+            }
             </div>   
     );
 };

@@ -9,17 +9,37 @@
     background: none;
     border: 1px solid #84BF04;
     border-radius: 20px;
+    
   }
 
+  .wideButton {
+    width: 180px;
+    height: 32px;
+
+    font-size: 14px;
+    color: #84BF04;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    background: none;
+    border: 1px solid #84BF04;
+    border-radius: 20px;
+
+  
+  }
+  .wideButton:hover,
   .button:hover {
     color: #fff;
     background: #8FD000;
-    border: 1px solid #8FD000;
+    /* border: 1px solid #8FD000; */
+    outline: none;
+    border: none;
   }
 
+  .wideButton:active,
   .button:active {
     color: #fff; 
     background: #6C9D03;
     border: 1px solid #6C9D03;
   
   }
+

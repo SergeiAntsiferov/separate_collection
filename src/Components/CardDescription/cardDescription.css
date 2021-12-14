@@ -19,13 +19,13 @@
     width: 80vw;
     padding: 16px;
     margin: 16px;
-
+    
     border: 1px solid black;
     border-radius: 16px;
 }
-.CardDescription__block-description {
+/* .CardDescription__block-description {
     background-color: rgba(255, 251, 9, 0.199)
-}
+} */
 
 .CardDescription__block-accepted {
     background-color: rgba(9, 255, 50, 0.199)
@@ -38,6 +38,7 @@
 .CardDescription__block-title {
     width: 100%;
     text-align: center;
+    padding-bottom: 8px;
 }
 
 .CardDescription__block-text {

@@ -1,0 +1,12 @@
+.garbageBage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.garbageBage:hover {
+    box-shadow: 0px 0px 12px 0px inset #ccc;
+}
