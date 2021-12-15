@@ -3,6 +3,7 @@ import React from 'react';
 
 
 const EditPoints = () => {
+
     return (
             <div className="main">
             <h1 className="main__title">EditPoints</h1>

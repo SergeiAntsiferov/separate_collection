@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     justify-content: space-around;
 
+    padding: 16px;
+
 }
 
 .points__title {

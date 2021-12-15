@@ -1,0 +1,12 @@
+.recievePoint {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+    margin: 8px;
+}
+
+.recievePoint > *{
+    margin: 4px;
+}

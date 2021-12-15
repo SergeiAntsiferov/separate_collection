@@ -16,7 +16,8 @@ const Main = () => {
                     name = {item.name}
                     description ={ item.description} 
                     key = {item.title}
-                    />)
+                    /> 
+                    )
                 })
             }
         </div>

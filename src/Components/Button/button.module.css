@@ -33,6 +33,7 @@
     /* border: 1px solid #8FD000; */
     outline: none;
     border: none;
+    cursor: pointer;
   }
 
   .wideButton:active,
