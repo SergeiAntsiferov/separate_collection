@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../Components/AuthContext/AuthContext';
+import { AuthContext } from '../../Routing & Context/AuthContext/AuthContext';
 import Button from '../../Components/Button/Button';
 import GarbageBage from '../../Components/GarbageBage/GarbageBage';
 import {garbageCategories} from '../../databases/garbageCategories';
 import classes from '../../Components/Button/button.module.css'
 import './points.css'
-import RecievePoint from '../../Components/RecievePoint/RecievePoint';
+import RecievePointList from '../../Components/RecievePointList/RecievePointList';
 
 const Points = () => {
     
@@ -24,8 +24,8 @@ const Points = () => {
                     />)
                 })
             }
-            {isAuth && <Button className={classes.wideButton}>Добавить пункт приёма</Button>}
-            <RecievePoint/>
+            <RecievePointList/>
+            {isAuth && <Button className={classes['wide-button']}>Добавить пункт приёма</Button>}
             </div>   
     );
 };

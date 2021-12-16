@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './recievePoint.css'
 import Button from '../Button/Button';
 import classes from '../Button/button.module.css'
+import { AuthContext } from '../../Routing & Context/AuthContext/AuthContext';
 
 
 const RecievePoint = (props) => {
     const {image, address, workingHours, category} = props;
+    // const  {paper, glass, tin, aluminum, pet, pnd, lamps, batteries} = category
+
+    // const categoryList = category.reduce((acc, item) => {
+    //     if (item.value) {
+    //         return acc + `${item.key}`
+    //     } else {
+    //         return 'error'
+    //     }
+        
+    // }, '')
+
+    const {isAuth} = useContext(AuthContext)
         return (
         <div className="recievePoint">
             <img  className="recievePoint__image" src={image} alt="recievePointPhoto" />
@@ -13,8 +26,7 @@ const RecievePoint = (props) => {
             <p className="recievePoint__paragraph">Время работы: {workingHours}</p>
             <p className="recievePoint__paragraph">Что принимается:</p>
             <p className="recievePoint__paragraph">{category}</p>
-            <Button className={classes.wideButton}>Удалить</Button>
-            <Button className={classes.wideButton}>Редактировать</Button>
+            {isAuth && <Button className={classes['wide-button']}>Удалить</Button>}
 
         </div>
     );

@@ -40,14 +40,6 @@ export const garbageCategories = [
     description: 'бутылки от напитков, молочных продуктов'
 },
 
-{   name: 'pnd',
-    title: 'ПНД-пластик',
-    image: '././images/card-logo/pnd-plastic.png',
-    dangerous: false,
-    recycleable: true,
-    description: 'банки, флаконы для косметики, бытовой химии'
-},
-
 {   name: 'batteries',
     title: 'Батарейки',
     image: '././images/card-logo/battery.svg',
@@ -62,6 +54,13 @@ export const garbageCategories = [
     dangerous: false,
     recycleable: false,
     description: 'светодиодные, галогенные и лампы накаливания'
+},
+{   name: 'pnd',
+    title: 'ПНД-пластик',
+    image: '././images/card-logo/pnd-plastic.png',
+    dangerous: false,
+    recycleable: true,
+    description: 'банки, флаконы для косметики, бытовой химии'
 },
 ]
 

@@ -2,14 +2,15 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import { BrowserRouter } from 'react-router-dom'
-import AppRouter from './Components/AppRouter/AppRouter';
+import AppRouter from './Routing & Context/AppRouter/AppRouter';
 import { useEffect, useState } from 'react';
-import { AuthContext } from './Components/AuthContext/AuthContext';
+import { AuthContext } from './Routing & Context/AuthContext/AuthContext';
 
 
 
 
 function App() {
+
 
 
   const [isAuth, setIsAuth] = useState(false);
@@ -32,6 +33,7 @@ function App() {
   function logout() {
     setIsAuth(false)
     localStorage.removeItem('isAuth')
+
   }
   
   //В контексте хранятся функции для доступа к ним из других элементов реакта

@@ -3,9 +3,12 @@ import './Login.css';
 import Button from '../../Components/Button/Button';  
 import classes from'../../Components/Button//button.module.css'
 import {users} from '../../databases/users'
-import { AuthContext } from '../../Components/AuthContext/AuthContext';
+import { AuthContext } from '../../Routing & Context/AuthContext/AuthContext';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+
+    const history = useHistory();
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -20,6 +23,7 @@ const Login = () => {
         event.preventDefault()
         if (getCurrentUser) {
             login();
+            history.push('/')
         } else {
             alert ('Нет такого пользователя')
         }
@@ -65,8 +69,8 @@ const Login = () => {
                         required
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}/>
-                <Button className={classes.wideButton} type="submit" onClick={submitForm}>Войти</Button>
-                <Button className={classes.wideButton} type="submit" onClick={addNewUser}>Cоздать аккаунт</Button>
+                <Button className={classes['wide-button']} type="submit" onClick={submitForm}>Войти</Button>
+                <Button className={classes['wide-button']} type="submit" onClick={addNewUser}>Cоздать аккаунт</Button>
             </div>
         </form>
     );

@@ -14,7 +14,7 @@ const Main = () => {
                     title = {item.title}
                     image = {item.image}
                     name = {item.name}
-                    description ={ item.description} 
+                    description = {item.description} 
                     key = {item.title}
                     /> 
                     )
