@@ -14,6 +14,7 @@ function App() {
 
 
   const [isAuth, setIsAuth] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   //Хук проверяет наличие значения авторизации в localStorage,
   //для того чтобы авторизация не слетала при переходах и обновлениях 
@@ -37,7 +38,7 @@ function App() {
   }
   
   //В контексте хранятся функции для доступа к ним из других элементов реакта
-  const context = {isAuth, setIsAuth, login, logout}
+  const context = {isAuth, setIsAuth, login, logout, isVisible, setIsVisible}
 
   return (
     <BrowserRouter>

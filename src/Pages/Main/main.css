@@ -1,17 +1,52 @@
-.main {
+  .main__banner {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-around;
-    height: 100%;
-    background-size: auto;
-    
-  }
+    height: 40vh;
+    padding: 16px;
+    background: radial-gradient(40.91% 109.45% at 50% 50%, #C1E9CF 0%, #A9D1B7 100%);
+  
+}
 
   .main__title {
+    min-width: 200px;
+    padding: 8px;
+
+    color: white;
+    font-size: 5vh;
+  }
+
+  .main__logo {
+    height: 35vh;
+  }
+
+  .main__subtitle {
     width: 100vw;
     padding: 8px;
 
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1440px) {
+
+  }
+  
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+  
+    .main__banner {
+      flex-direction: column;
+      height: 60vh;
+      
+    }
+
+    .main__title {
+      text-align: center;
+      width: 90vw;
+      font-size: 4vh;
+
+    }
 
   }

@@ -50,14 +50,14 @@ export const garbageCategories = [
 
 {   name: 'lamps',
     title: 'Лампы',
-    image: '././images/card-logo/lamp.png',
+    image: '././images/card-logo/lamps.svg',
     dangerous: false,
     recycleable: false,
     description: 'светодиодные, галогенные и лампы накаливания'
 },
 {   name: 'pnd',
     title: 'ПНД-пластик',
-    image: '././images/card-logo/pnd-plastic.png',
+    image: '././images/card-logo/pnd-plastic.svg',
     dangerous: false,
     recycleable: true,
     description: 'банки, флаконы для косметики, бытовой химии'

@@ -1,0 +1,22 @@
+.createPoints {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+
+.createPoints__checkbox-group > label {
+ padding: 4px;
+}
+
+.createPoints__checkbox-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.createPoints__input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}

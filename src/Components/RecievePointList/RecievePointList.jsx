@@ -1,32 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { recievePoints } from "../../databases/recievePoints";
-import RecievePoint from "../RecievePoint/RecievePoint";
+import RecievePoint from "./RecievePoint/RecievePoint";
+import './RecievePointList.css'
+import CreatePoints from '../../Pages/CreatePoints/CreatePoints'
+
 
 const RecievePointList = () => {
 
-    const categoryList = recievePoints.reduce((acc, item) => {
-        if (item) {
-            return acc + `${item}`
-        } else {
-            return console.log(recievePoints)
-            
-        }
-        
-    }, '')
+
+
+    const [points, setPoints] = useState([])
+
+    useEffect (() => {
+        const response = recievePoints
+        setPoints([...response])
+    }, [])
+    console.log(points)
 
     return (
         <div className="RecievePointList">
-            {recievePoints.map((point) => {
+            {points.map((point) => {
                 return (
                     <RecievePoint
-                    key = {point.name}
-                    image = {point.image} 
+                    key = {point.address}
+                    // image = {point.image} 
                     address = {point.address}
                     workingHours = {point.workingHours}
-                    category = {categoryList}
+                    category = {point.category}
                     />
                 )
             })}
+            <CreatePoints points={points} setPoints={setPoints}/>
+            {/* <CreatePoints/> */}
         </div>
     )
 }

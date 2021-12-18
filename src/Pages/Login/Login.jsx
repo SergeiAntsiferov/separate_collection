@@ -28,25 +28,33 @@ const Login = () => {
             alert ('Нет такого пользователя')
         }
     }
+
+    // const getCurrentUserFromLS = () => {
+    //     if ((localStorage.getItem(`${email}`) !== null) && (localStorage.getItem(`${email}`) === `${password}`)) {
+    //     console.log('true')
+    //     return;
+    // } else {
+    //     console.log('false');
+    //     }
+    // }
     
     //Поиск введённых данных в массиве
     const getCurrentUser = users.find((user) => 
-    (user.email === email && user.password === password)) || (localStorage.getItem(`${email}`))
+    (user.email === email && user.password === password)) //|| (getCurrentUserFromLS)
 
-    
 
-    //Добавление дового пользователя
-    function addNewUser(event) {
-        event.preventDefault()
-        if (!getCurrentUser && email && password) {
-            //добавил пользователя в localStorage
-            localStorage.setItem(`${email}`, `${password}`)
-        } else if (!email || !password) {
-        alert ('Введите данные')
-        } else { 
-        alert ('Пользователь с таким именем уже существует')
-        }
-    }
+    // //Добавление дового пользователя
+    // function addNewUser(event) {
+    //     event.preventDefault()
+    //     if (!getCurrentUser && email && password) {
+    //         //добавил пользователя в localStorage
+    //         localStorage.setItem(`${email}`, `${password}`)
+    //     } else if (!email || !password) {
+    //     alert ('Введите данные')
+    //     } else { 
+    //     alert ('Пользователь с таким именем уже существует')
+    //     }
+    // }
 
     return (
         <form className="form">
@@ -70,7 +78,7 @@ const Login = () => {
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}/>
                 <Button className={classes['wide-button']} type="submit" onClick={submitForm}>Войти</Button>
-                <Button className={classes['wide-button']} type="submit" onClick={addNewUser}>Cоздать аккаунт</Button>
+                {/* <Button className={classes['wide-button']} type="submit" onClick={addNewUser}>Cоздать аккаунт</Button> */}
             </div>
         </form>
     );

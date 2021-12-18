@@ -2,6 +2,10 @@
     display: flex;
     justify-content: center;
     height: 50px;
+    padding: 4px;
     background-color: #84BF04;
   }
   
+  .footer > * {
+    margin: 0 4px;
+  }
