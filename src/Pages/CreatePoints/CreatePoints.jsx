@@ -3,38 +3,44 @@ import { Formik, Field, Form } from 'formik';
 import Button from '../../Components/Button/Button';
 import classes from '../../Components/Button/button.module.css'
 import './CreatePoints.css'
-import {customAlphabet} from "nanoid";
-import { AuthContext } from '../../Routing & Context/AuthContext/AuthContext';
-const nanoid = customAlphabet('1234567890', 10)
+import { AppContext } from '../../App';
 
 
-const CreatePoints = (props) => {
 
-    const {isVisible, setIsVisible} = useContext(AuthContext)
-
-    const {points, setPoints} = props;
+const CreatePoints = () => {
     
-    const [address, setAddress] = useState('')
-    const [workingHours, setWorkingHours] = useState('')
+    const {isVisible, setIsVisible, points, setPoints} = useContext(AppContext);
 
+    //Хуки для управления input
+    const [address, setAddress] = useState('');
+    const [workingHours, setWorkingHours] = useState('');
+
+    //Функция создания нового пункта сбора отходов
     const createPoint = (category) => {
         const newPoint = {
             // image: '',
-            id: Number(nanoid()),
             address: `${address}`,
             workingHours: `${workingHours}`,
             category: `${category}`
         }
-        setPoints(prevState => [...prevState, newPoint])
+
+        //setPoint обновляет отображаемый список 
+        setPoints([...points, newPoint])
+        localStorage.setItem('points', JSON.stringify([...points, newPoint]))
+
+        console.log(points)
+
+        //Сброс поля ввода после создания
         setAddress('')
         setWorkingHours('')
-        console.log(points)
-    }
+    };
+
 
     const close = () => {
         setIsVisible(null)
-    }
+    };
 
+    //Условие отображения компонента
     if (!isVisible) {
         return null
     }
@@ -45,15 +51,14 @@ const CreatePoints = (props) => {
             <Formik
                 initialValues={{
                     category: []
-            }}
+                }}
                 onSubmit={(values) => {
                 (JSON.stringify(values));
                 createPoint(values.category)
-            }}
+                }} 
             >
             {() => (
                 <Form>
-                    <Button onClick={close}>закрыть</Button>
                     <div className="createPoints__input-group">
                         <label htmlFor="address">Адрес</label>
                         <input id="address" 
@@ -69,23 +74,23 @@ const CreatePoints = (props) => {
                             value={workingHours}
                             onChange={(e) => {setWorkingHours(e.target.value)}}/>
                     </div>
-                    <h4 id="checkbox-group">Типы мусора</h4>
+                    <h4 id="checkbox-group">Типы отходов</h4>
                     <div role="group" aria-labelledby="checkbox-group" className="createPoints__checkbox-group">
-                        <label><Field type="checkbox" name="category" value=" Бумага"/> Бумага</label>
-                        <label><Field type="checkbox" name="category" value=" Стекло" /> Стекло</label>
-                        <label><Field type="checkbox" name="category" value=" Жесть" /> Жесть</label>
-                        <label><Field type="checkbox" name="category" value=" Алюминий" /> Алюминий</label>
+                        <label><Field type="checkbox" name="category" value=" бумага"/> Бумага</label>
+                        <label><Field type="checkbox" name="category" value=" стекло" /> Стекло</label>
+                        <label><Field type="checkbox" name="category" value=" жесть" /> Жесть</label>
+                        <label><Field type="checkbox" name="category" value=" алюминий" /> Алюминий</label>
                         <label><Field type="checkbox" name="category" value=" ПЭТ-пластик" /> ПЭТ-пластик</label>
                         <label><Field type="checkbox" name="category" value=" ПНД-пластик" /> ПНД-пластик</label>
-                        <label><Field type="checkbox" name="category" value=" Батарейки" /> Батарейки</label>
-                        <label><Field type="checkbox" name="category" value=" Лампы" /> Лампы</label>
+                        <label><Field type="checkbox" name="category" value=" батарейки" /> Батарейки</label>
+                        <label><Field type="checkbox" name="category" value=" лампы" /> Лампы</label>
                     </div>
                     <Button type="submit" className={classes.button}>Создать</Button>
+                    <Button onClick={close}>закрыть</Button>
                 </Form>
             )}
             </Formik>
         </div>
-        
     );
 };
 

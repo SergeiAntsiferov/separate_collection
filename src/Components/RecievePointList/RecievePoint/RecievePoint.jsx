@@ -2,14 +2,26 @@ import React, { useContext } from 'react';
 import './recievePoint.css'
 import Button from '../../Button/Button';
 import classes from '../../Button/button.module.css'
-import { AuthContext } from '../../../Routing & Context/AuthContext/AuthContext';
+import { AppContext } from '../../../App';
 
 
 const RecievePoint = (props) => {
-    const { address, workingHours, category} = props;
-  
 
-    const {isAuth} = useContext(AuthContext)
+    const {address, workingHours, category} = props;
+    const {isAuth, points, setPoints} = useContext(AppContext);
+    
+    //Функция удаления пунктов
+    function deletePoint() {
+        const result = points.filter((item) => item.address !== address )
+        return (
+            setPoints(result),
+            localStorage.setItem('points', JSON.stringify(result))
+     
+            
+            )
+        }
+
+
         return (
         <div className="recievePoint">
             {/* <img  className="recievePoint__image" src={image} alt="recievePointPhoto" /> */}
@@ -17,7 +29,7 @@ const RecievePoint = (props) => {
             <p className="recievePoint__paragraph">Время работы: {workingHours}</p>
             <p className="recievePoint__paragraph">Что принимается:</p>
             <p className="recievePoint__paragraph">{category}</p>
-            {isAuth && <Button className={classes['wide-button']}>Удалить</Button>}
+            {isAuth && <Button className={classes['wide-button']} onClick={deletePoint}>Удалить</Button>}
 
         </div>
     );

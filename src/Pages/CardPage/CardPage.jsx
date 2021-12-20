@@ -5,15 +5,16 @@ import { cardDescriptions } from '../../databases/cardDescriptions';
 
 
 const CardPage = () => {
+
+    //Используем значение из адресной строки для динамической маршрутизации
     const {name} = useParams()
 
     const page = cardDescriptions.find((item) => item.name === name)
-    console.log(page)
 
     if (!page) {
-        return <div>
-            {`Страницы ${name} не существует`}
-        </div>
+        return <p>
+            {`Так делать не нужно, страницы ${name} не существует`}
+        </p>
     }
 
     return (

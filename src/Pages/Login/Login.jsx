@@ -3,20 +3,21 @@ import './Login.css';
 import Button from '../../Components/Button/Button';  
 import classes from'../../Components/Button//button.module.css'
 import {users} from '../../databases/users'
-import { AuthContext } from '../../Routing & Context/AuthContext/AuthContext';
 import { useHistory } from 'react-router-dom';
+import { AppContext } from '../../App';
 
 const Login = () => {
 
     const history = useHistory();
 
+    //Хуки для управления input
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
 
 
     //Забрал функцию логина из контекста
-    const {login} = useContext(AuthContext)
+    const {login} = useContext(AppContext )
     
     //Валидация формы
     function submitForm(event) {
@@ -60,16 +61,13 @@ const Login = () => {
         <form className="form">
             <div className="form__wrapper">
                 <h1 className='form__title'>Авторизация</h1>
-                {/* <label className="form__input-label" for='email'>Email</label> */}
                 <input  className="form__input" 
                         type="email" 
                         id='email' 
                         placeholder='Введите ваш email' 
                         required
-                        //Делаем input управляемым 
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}/>
-                {/* <label className="form__input-label" for='password'>Пароль</label> */}
                 <input  className="form__input" 
                         type="password" 
                         id='password' 

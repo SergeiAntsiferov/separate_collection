@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../Routing & Context/AuthContext/AuthContext';
 import Button from '../../Components/Button/Button';
 import classes from '../../Components/Button/button.module.css'
 import './points.css'
 import RecievePointList from '../../Components/RecievePointList/RecievePointList';
 import GarbageBageList from '../../Components/GarbageBageList/GarbageBageList';
+import { AppContext } from '../../App';
 
 const Points = () => {
     
-    const {isAuth, setIsVisible} = useContext(AuthContext)
+    const {isAuth, setIsVisible} = useContext(AppContext)
+    
     const addNewPoint = () => {
         setIsVisible(true)
     }

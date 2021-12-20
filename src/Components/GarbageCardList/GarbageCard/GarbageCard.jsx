@@ -17,7 +17,8 @@ const GarbageCard = (props) => {
             <img className="card__image" src={image} alt={name} />
             <div className="card__wrapper">
                 <p className="card__description">{description}</p>
-                <Link to={`/card/${name}`}><Button className={classes['wide-button']}>Подробнее</Button></Link>
+                {/* <Link to={`/card/${name}`}><Button className={classes['wide-button']}>Подробнее</Button></Link> */}
+                <Link to={`/card/${name}`}><Button className={classes.button}>Подробнее</Button></Link>
             </div>
         </div>
     );
