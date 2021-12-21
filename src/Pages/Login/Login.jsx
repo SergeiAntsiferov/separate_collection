@@ -52,14 +52,14 @@ const Login = () => {
         <form className="form">
             <div className="form__wrapper">
                 <h1 className='form__title'>Авторизация</h1>
-                <input  className="form__input" 
+                <input  className="input form__input" 
                     type="email" 
                     id='email' 
                     placeholder='Введите ваш email' 
                     required
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}/>
-                <input  className="form__input" 
+                <input  className="input form__input" 
                     type="password" 
                     id='password' 
                     placeholder='Введите ваш пароль' 

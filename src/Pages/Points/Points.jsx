@@ -8,17 +8,25 @@ import './points.css'
 
 const Points = () => {
     
-    const {isAuth, setIsVisible} = useContext(AppContext)
+    const {isAuth, setIsVisible, setPoints} = useContext(AppContext)
     const addNewPoint = () => {
         setIsVisible(true)
+    }
+
+    const resetFilter = () => {
+        const showAll = JSON.parse(localStorage.getItem('points'))
+        setPoints(showAll)
     }
 
     return (
         <div className="points">
             <h1 className="points__title">Пункты приёма</h1>
             <GarbageBageList/>
+            <div className="points__wrapper">
+                {isAuth && <Button className={classes['wide-button']} onClick={addNewPoint}>Добавить пункт приёма</Button>}
+                <Button className={classes['wide-button']} onClick={resetFilter}>Сбросить фильтр</Button>
+            </div>
             <RecievePointList/>
-            {isAuth && <Button className={classes['wide-button']} onClick={addNewPoint}>Добавить пункт приёма</Button>}
         </div>   
     );
 };

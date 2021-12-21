@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Button from '../../Button/Button';
 import classes from '../../Button/button.module.css'
 import { AppContext } from '../../../App';
-import './recievePoint.css'
+import './recievePoint.scss'
 
 
 const RecievePoint = (props) => {
@@ -24,7 +24,7 @@ const RecievePoint = (props) => {
             {/* <img  className="recievePoint__image" src={image} alt="recievePointPhoto" /> */}
             <h3 className="recievePoint__title">{address}</h3>
             <p className="recievePoint__paragraph">Время работы: {workingHours}</p>
-            <h3 className="recievePoint__paragraph">Что принимается:</h3>
+            <h3 className="recievePoint__title">Что принимается:</h3>
             <p className="recievePoint__paragraph">{category}</p>
             {isAuth && <Button className={classes['wide-button']} onClick={deletePoint}>Удалить</Button>}
         </div>

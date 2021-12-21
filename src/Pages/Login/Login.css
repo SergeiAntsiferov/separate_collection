@@ -21,7 +21,8 @@
     background: #B6CCB633;
 }
 
-.form__input:hover,:focus {
+.input:hover,
+.input:focus {
     outline: none;
     box-shadow: inset 0px 0px 8px 0px #808080;
 }
@@ -30,7 +31,7 @@
     color: #808080;
 }
 
-.form__input {
+.input {
     width: 50%;
     height: 32px;
     padding: 8px;

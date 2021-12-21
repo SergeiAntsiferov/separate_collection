@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../App';
-import './garbageBage.css';
+import './garbageBage.scss';
 
 const GarbageBage = (props) => {
     

@@ -41,7 +41,7 @@ const CreatePoints = () => {
 
     return (
         <div className="createPoints">
-            <h2 className="createPoints__title">Создать</h2>
+            {/* <h2 className="createPoints__title">Создать</h2> */}
             <Formik
                 initialValues={{
                     category: []
@@ -54,23 +54,23 @@ const CreatePoints = () => {
             {() => (
                 <Form>
                     <div className="createPoints__input-group">
-                        <label htmlFor="address">Адрес</label>
-                        <input id="address" 
+                        {/* <label htmlFor="address">Адрес</label> */}
+                        <input className="input createPoints__input" 
+                            id="address" 
                             type="text" 
-                            className="createPoints__input" 
                             placeholder="Адрес" 
                             value={address}
                             onChange={(e) => {setAddress(e.target.value)}}/>
-                        <label htmlFor="workingHours">Режим работы</label>
-                        <input id="workingHours" 
+                        {/* <label htmlFor="workingHours">Режим работы</label> */}
+                        <input className="input createPoints__input"
+                            id="workingHours" 
                             type="text" 
-                            className="createPoints__input"
                             placeholder="Режим работы"
                             value={workingHours}
                             onChange={(e) => {setWorkingHours(e.target.value)}}/>
                     </div>
-                    <h4 id="checkbox-group">Типы отходов</h4>
-                    <div role="group" aria-labelledby="checkbox-group" className="createPoints__checkbox-group">
+                    <h4 className="createPoints__subtitle" id="checkbox-group">Что принимается:</h4>
+                    <div className="createPoints__checkbox-group" role="group" aria-labelledby="checkbox-group">
                         <label><Field type="checkbox" name="category" value=" бумага"/> Бумага</label>
                         <label><Field type="checkbox" name="category" value=" стекло" /> Стекло</label>
                         <label><Field type="checkbox" name="category" value=" жесть" /> Жесть</label>

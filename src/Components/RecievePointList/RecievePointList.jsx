@@ -11,6 +11,8 @@ const RecievePointList = () => {
 
     return (
         <div className="RecievePointList">
+            
+            <CreatePoints/>
             {points.map((point) => {
                 return (
                     <RecievePoint
@@ -22,7 +24,6 @@ const RecievePointList = () => {
                     />
                 )
             })}
-            <CreatePoints/>
         </div>
     )
 }

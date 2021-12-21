@@ -11,3 +11,9 @@
     width: 100%;
     text-align: center;
 }
+
+.points__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 32px);
+}

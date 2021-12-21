@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from '../../Button/button.module.css'
 import Button from '../../Button/Button';
-import './garbageCard.css';
+import './garbageCard.scss';
 
 
 

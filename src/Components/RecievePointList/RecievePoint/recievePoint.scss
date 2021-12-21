@@ -1,0 +1,24 @@
+.recievePoint {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 300px;
+    height: 240px;
+    padding: 16px;
+    margin: 8px;
+
+    background: rgba(182, 204, 182, 0.2);
+    border-radius: 8px;
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.recievePoint__paragraph {
+    text-align: center;
+}
+

@@ -1,22 +1,51 @@
 .createPoints {
     display: flex;
-    flex-direction: column;
     align-items: center;
+
+    width: 300px;
+    height: 240px;
     padding: 16px;
+    margin: 8px;
+
+    background: rgba(182, 204, 182, 0.2);
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
-.createPoints__checkbox-group > label {
- padding: 4px;
-}
-
-.createPoints__checkbox-group {
+Form {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+
 }
 
 .createPoints__input-group {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;  
+    flex-flow: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.createPoints__input {
+    width: calc(100% - 8px);
+    height: 28px;
+    margin: 4px;
+}
+
+.createPoints__checkbox-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: calc(100% - 8px);
+    margin: 8px;
+}
+
+.createPoints__checkbox-group > * {
+    width: 50%;
+}
+
+.createPoints:hover {
+    transform: scale(1.1);
 }
