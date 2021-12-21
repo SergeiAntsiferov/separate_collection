@@ -11,15 +11,14 @@ const GarbageCardList = () => {
             {garbageCategories.map((item) => {
                 return (
                     <GarbageCard
+                    key = {item.title}
                     title = {item.title}
                     image = {item.image}
                     name = {item.name}
                     description = {item.description} 
-                    key = {item.title}
                     /> 
-                    )
-                })
-            }
+                )
+            })}
         </div>
     );
 };

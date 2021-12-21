@@ -8,19 +8,16 @@ const GarbageBage = (props) => {
     const {setPoints} = useContext(AppContext)
 
     const sorting = () => {
-        const pointsFromLocalStorage = JSON.parse(localStorage.getItem('points'))
-        const temporary = pointsFromLocalStorage.filter((item) =>  {
+        const pointsFromLS = JSON.parse(localStorage.getItem('points'))
+        const temporary = pointsFromLS.filter((item) =>  {
             if (item.category.toLowerCase().includes(title.toLowerCase())) {
-            // если имя бейджа есть в категории объекта, возвращает объект
-            return item
-            // если нет - то не возвращает (спасибо,Кэп!)
-            } return !item
+                return item // если имя бейджа есть в категориях объекта, возвращает объект
+            } 
+            return !item // если нет - то не возвращает (спасибо,Кэп!)
         })
-
-            return (
-                // обновил список пунктов на странице в соответствии с фмльтром
-                setPoints([...temporary])
-            )
+        return (
+            setPoints([...temporary]) // обновил список пунктов на странице в соответствии с фмльтром
+        )
     }
 
     return (

@@ -1,42 +1,48 @@
-import './App.css';
-import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer';
-import { BrowserRouter } from 'react-router-dom'
-import AppRouter from './Routing/AppRouter/AppRouter';
 import { useEffect, useState } from 'react';
 import { createContext } from "react";
+import { BrowserRouter } from 'react-router-dom'
 import { recievePoints } from './databases/recievePoints';
+import { users } from './databases/users';
+import AppRouter from './Routing/AppRouter/AppRouter';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import {customAlphabet} from "nanoid";
+import './App.css';
 
-//Добавил контекст в приложение
+//Добавление контекста в приложение
 export const AppContext = createContext (null); 
 // Бибилиотека  nanoid для генерации уникальных ключей для итерируемых объектов
 const nanoid = customAlphabet('1234567890', 10) 
 
 function App() {
 
-  
   const [isAuth, setIsAuth] = useState(false);  //значение авторизации
   const [isVisible, setIsVisible] = useState(false) //значение видимости
   const [points, setPoints] = useState([]) //Контроль изменений в массиве recievePoints
+  const [usersLS, setUsersLS] = useState([]) //Контроль изменений в массиве usersLS
   
-  //Обновление массива при рендере
+  //Обновление массива пунктов приёма при рендере
   useEffect (() => {
     if (!localStorage.getItem('points')) {
-      // console.log('1')
        localStorage.setItem('points', JSON.stringify(recievePoints))
-      // setPoints(notExist)
       
     } else {     
       const points = JSON.parse(localStorage.getItem('points'))
       setPoints(points)
-      console.log(points)
-
     }
   }, [])
 
+  //Обновление массива пользователей при рендере
+  useEffect (() => {
+    if (!localStorage.getItem('users')) { 
+       localStorage.setItem('users', JSON.stringify(users))
+    } 
+    const usersLS = JSON.parse(localStorage.getItem('users'))
+    setUsersLS(usersLS)
+  }, [])
 
-  //Проверка наличия значения авторизации в localStorage при каждом рендере
+
+  //Проверка наличия значения авторизации в localStorage при рендере
   useEffect (() => { 
     if (localStorage.getItem('isAuth')) {
       setIsAuth(true)
@@ -56,13 +62,15 @@ function App() {
 
   }
   
-  //В контексте хранятся функции для доступа к ним из других элементов реакта
+  //В контексте хранятся функции для доступа к ним из других элементов приложения
   const context = {
     isAuth, setIsAuth,
     login, logout, 
     isVisible, setIsVisible,
     points, setPoints,
-    nanoid}
+    usersLS, setUsersLS,
+    nanoid
+  }
 
   return (
     <BrowserRouter>

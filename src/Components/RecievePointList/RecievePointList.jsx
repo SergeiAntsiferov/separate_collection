@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import RecievePoint from "./RecievePoint/RecievePoint";
-import './RecievePointList.css'
-import CreatePoints from '../../Pages/CreatePoints/CreatePoints'
+import CreatePoints from '../CreatePoints/CreatePoints'
 import { AppContext } from "../../App";
+import './RecievePointList.css'
 
 
 const RecievePointList = () => {
 
-const {points, nanoid} = useContext(AppContext)
+    const {points, nanoid} = useContext(AppContext)
 
     return (
         <div className="RecievePointList">

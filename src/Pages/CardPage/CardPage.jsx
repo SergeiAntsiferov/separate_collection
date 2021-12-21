@@ -6,9 +6,8 @@ import { cardDescriptions } from '../../databases/cardDescriptions';
 
 const CardPage = () => {
 
-    //Используем значение из адресной строки для динамической маршрутизации
+    //Значение из адресной строки для динамической маршрутизации
     const {name} = useParams()
-
     const page = cardDescriptions.find((item) => item.name === name)
 
     if (!page) {

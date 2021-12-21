@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
 import Button from '../../Components/Button/Button';
 import classes from '../../Components/Button/button.module.css'
-import './points.css'
 import RecievePointList from '../../Components/RecievePointList/RecievePointList';
 import GarbageBageList from '../../Components/GarbageBageList/GarbageBageList';
 import { AppContext } from '../../App';
+import './points.css'
 
 const Points = () => {
     
     const {isAuth, setIsVisible} = useContext(AppContext)
-    
     const addNewPoint = () => {
         setIsVisible(true)
     }
@@ -20,7 +19,7 @@ const Points = () => {
             <GarbageBageList/>
             <RecievePointList/>
             {isAuth && <Button className={classes['wide-button']} onClick={addNewPoint}>Добавить пункт приёма</Button>}
-            </div>   
+        </div>   
     );
 };
 

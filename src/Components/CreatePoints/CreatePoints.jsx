@@ -1,17 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { Formik, Field, Form } from 'formik';
-import Button from '../../Components/Button/Button';
 import classes from '../../Components/Button/button.module.css'
-import './CreatePoints.css'
+import Button from '../Button/Button';
 import { AppContext } from '../../App';
+import './CreatePoints.css'
 
 
 
 const CreatePoints = () => {
     
     const {isVisible, setIsVisible, points, setPoints} = useContext(AppContext);
-
-    //Хуки для управления input
     const [address, setAddress] = useState('');
     const [workingHours, setWorkingHours] = useState('');
 
@@ -27,10 +25,6 @@ const CreatePoints = () => {
         //setPoint обновляет отображаемый список 
         setPoints([...points, newPoint])
         localStorage.setItem('points', JSON.stringify([...points, newPoint]))
-
-        console.log(points)
-
-        //Сброс поля ввода после создания
         setAddress('')
         setWorkingHours('')
     };
@@ -47,7 +41,7 @@ const CreatePoints = () => {
 
     return (
         <div className="createPoints">
-            <h2 className="createPoints__title">Create</h2>
+            <h2 className="createPoints__title">Создать</h2>
             <Formik
                 initialValues={{
                     category: []
@@ -68,7 +62,8 @@ const CreatePoints = () => {
                             value={address}
                             onChange={(e) => {setAddress(e.target.value)}}/>
                         <label htmlFor="workingHours">Режим работы</label>
-                        <input id="workingHours" type="text" 
+                        <input id="workingHours" 
+                            type="text" 
                             className="createPoints__input"
                             placeholder="Режим работы"
                             value={workingHours}
@@ -85,8 +80,8 @@ const CreatePoints = () => {
                         <label><Field type="checkbox" name="category" value=" батарейки" /> Батарейки</label>
                         <label><Field type="checkbox" name="category" value=" лампы" /> Лампы</label>
                     </div>
-                    <Button type="submit" className={classes.button}>Создать</Button>
-                    <Button onClick={close}>закрыть</Button>
+                    <Button type="submit" className={classes.button}>cоздать</Button>
+                    <Button className={classes.button} onClick={close}>закрыть</Button>
                 </Form>
             )}
             </Formik>
