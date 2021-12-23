@@ -14,6 +14,7 @@ const Header = () => {
         <header className="header">
             <Link className="header__link" to="/"><Logo/></Link>
             <Link className="header__link" to="/points">Пункты приёма</Link>
+            {/* <Link className="header__link" to="/maps">Карта</Link> */}
             <Link className="header__link" to="/about">О нас</Link>
             <Link className="header__link" to="/login">
                 {!isAuth ? <Button>Войти</Button> : <Button onClick={logout}>Выйти</Button>}

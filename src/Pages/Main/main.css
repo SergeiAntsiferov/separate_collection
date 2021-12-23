@@ -17,8 +17,13 @@
 
   .main__logo {
     height: 35vh;
-    transition: 1s;
+    animation: pulse 3s ease-in-out infinite ;
+  }
 
+  @keyframes pulse {
+    0% { transform: scale(1) }
+    50% { transform: scale(1.1) }
+    100% { transform: scale(1) }
   }
 
   .main__subtitle {
@@ -26,14 +31,7 @@
     padding: 8px;
     text-align: center;
   }
-
-  .main__logo:hover {
-    transform: scale(1.2)
-  }
   
-  
-  
-
   @media screen and (min-width: 769px) and (max-width: 1440px) {
 
   }

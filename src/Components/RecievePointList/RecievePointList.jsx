@@ -19,6 +19,7 @@ const RecievePointList = () => {
                     // image = {point.image}
                     key = {Number(nanoid())} //key нельзя передать в пропсы
                     address = {point.address}
+                    coordinate = {point.coordinate}
                     workingHours = {point.workingHours}
                     category = {point.category}
                     />

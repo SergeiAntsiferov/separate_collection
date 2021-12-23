@@ -6,7 +6,6 @@ import { AppContext } from '../../App';
 import './CreatePoints.css'
 
 
-
 const CreatePoints = () => {
     
     const {isVisible, setIsVisible, points, setPoints} = useContext(AppContext);
