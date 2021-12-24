@@ -10,7 +10,7 @@ import CardPage from "../../Pages/CardPage/CardPage";
 
 export const routes = [
     {path: '/', component: Main, exact: true},
-    {path: '/maps', component: Maps, exact: true},
+    {path: '/maps/:coordinates', component: Maps, exact: true},
     {path: '/about', component: About, exact:true},
     {path: '/login', component: Login, exact: true},
     {path: '/points', component: Points, exact: true},

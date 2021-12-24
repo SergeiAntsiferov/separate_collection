@@ -13,13 +13,15 @@ const RecievePointList = () => {
         <div className="RecievePointList">
             
             <CreatePoints/>
+            
             {points.map((point) => {
+                // console.log(point.address, point.coordinate)
                 return (
                     <RecievePoint
                     // image = {point.image}
                     key = {Number(nanoid())} //key нельзя передать в пропсы
                     address = {point.address}
-                    coordinate = {point.coordinate}
+                    coordinates = {point.coordinates}
                     workingHours = {point.workingHours}
                     category = {point.category}
                     />

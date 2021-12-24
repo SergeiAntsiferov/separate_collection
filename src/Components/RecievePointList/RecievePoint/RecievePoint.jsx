@@ -3,13 +3,12 @@ import Button from '../../Button/Button';
 import classes from '../../Button/button.module.css'
 import { AppContext } from '../../../App';
 import './recievePoint.scss'
-// import { Link } from 'react-router-dom';
-import Maps from '../../../Pages/Maps/Maps';
+import { Link } from 'react-router-dom';
 
 
 const RecievePoint = (props) => {
 
-    const {address, workingHours, category, coordinate} = props;
+    const {address, workingHours, category, coordinates} = props;
     const {isAuth, points, setPoints} = useContext(AppContext);
 
 
@@ -26,10 +25,8 @@ const RecievePoint = (props) => {
 
     return (
         <div className="recievePoint">
-            {/* <img  className="recievePoint__image" src={image} alt="recievePointPhoto" /> */}
             <h3 className="recievePoint__title">{address}</h3>
-            <Maps coordinate={coordinate}/>
-            {/* <Link to='/maps'>Посмотреть на карте</Link> */}
+            <Link to={`/maps/${JSON.stringify(coordinates)}`}>Показать на карте</Link >
             <p className="recievePoint__paragraph">Время работы: {workingHours}</p>
             <h3 className="recievePoint__title">Что принимается:</h3>
             <p className="recievePoint__paragraph">{category}</p>
