@@ -16,7 +16,7 @@
     // border: 1px solid red;}
 
     &:hover {
-        transform: scale(1.3);
+        transform: scale(1.1);
     }
 }
 
@@ -33,9 +33,4 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
-
-    .recievePoint {
-        width: 100%;
-    }
-
 }

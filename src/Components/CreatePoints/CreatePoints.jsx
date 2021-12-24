@@ -1,15 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { Formik, Field, Form } from 'formik';
-import classes from '../../Components/Button/button.module.css'
+import classes from '../../Components/Button/button.module.scss'
 import Button from '../Button/Button';
-import { AppContext } from '../../App';
+import { AppContext } from '../../utils/AppContext';
 import './CreatePoints.scss'
 import { garbageCategories } from '../../databases/garbageCategories';
+import { nanoid } from '../../utils/nanoid';
 
 
 const CreatePoints = () => {
     
-    const {isVisible, setIsVisible, points, setPoints, nanoid} = useContext(AppContext);
+    const {isVisible, setIsVisible, points, setPoints} = useContext(AppContext);
     const [address, setAddress] = useState('');
     const [workingHours, setWorkingHours] = useState('');
     const [suggestions, setSuggestions] = useState([]);
@@ -29,7 +30,7 @@ const CreatePoints = () => {
         localStorage.setItem('points', JSON.stringify([...points, newPoint]))
     };
 
-    
+    //Обработчик данных fetch-запроса
     const handleOnChangeInput = (event) => {
         setAddress(event.target.value)
         fetch ('https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address', {
@@ -45,6 +46,12 @@ const CreatePoints = () => {
         })
     }
 
+    //Обработчик результатов формы
+    const formHandler = (values) => {
+        (JSON.stringify(values));
+        createPoint(values.category)
+    }
+
     const close = () => {
         setIsVisible(null)
     };
@@ -57,26 +64,19 @@ const CreatePoints = () => {
     return (
         <div className="create-points">
             <Formik
-                initialValues={{
-                    category: []
-                }}
-                onSubmit={(values) => {
-                (JSON.stringify(values));
-                createPoint(values.category)
-                }} 
-            >
+                initialValues={{category: []}}
+                onSubmit={formHandler}>
             {() => (
                 <Form className="create-points__form">
                     <div className="create-points__input-group">
-                        <div className="test-wrapper">
+                        <div className="create-points__search-wrapper">
                             <input className="input create-points__input" 
                                 id="address" 
                                 type="text" 
                                 placeholder="Адрес" 
                                 value={address}
                                 onChange={handleOnChangeInput}/>
-                                {/* onChange={(e) => {setAddress(e.target.value)}}/> */}
-                            <div className="list">
+                            <div className="create-points__search-results">
                                 {suggestions.map((item) => {
                                     return (
                                         <div  key = {Number(nanoid())} onClick={() => {
@@ -87,7 +87,6 @@ const CreatePoints = () => {
                                         </div>
                                     )
                                 })}
-                      
                             </div>
                         </div>
                         <input className="input create-points__input"
@@ -97,7 +96,7 @@ const CreatePoints = () => {
                             value={workingHours}
                             onChange={(e) => {setWorkingHours(e.target.value)}}/>
                     </div>
-                    <h4 className="create-points__subtitle" id="checkbox-group">Что принимается:</h4>
+                    <h4 className="create-points__subtitle">Что принимается:</h4>
                     <div className="create-points__checkbox-group" role="group" aria-labelledby="checkbox-group">
                         {garbageCategories.map((item) => {
                             return (

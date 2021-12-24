@@ -1,18 +1,11 @@
 import { useEffect, useState } from 'react';
-import { createContext } from "react";
-import { BrowserRouter } from 'react-router-dom'
 import { recievePoints } from './databases/recievePoints';
 import { users } from './databases/users';
 import AppRouter from './Routing/AppRouter/AppRouter';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
-import {customAlphabet} from "nanoid";
-import './App.css';
-
-//Добавление контекста в приложение
-export const AppContext = createContext (null); 
-// Бибилиотека  nanoid для генерации уникальных ключей для итерируемых объектов
-const nanoid = customAlphabet('1234567890', 10) 
+import { AppContext } from './utils/AppContext';
+import './App.scss';
 
 function App() {
 
@@ -69,11 +62,9 @@ function App() {
     isVisible, setIsVisible,
     points, setPoints,
     usersLS, setUsersLS,
-    nanoid
   }
 
   return (
-    <BrowserRouter>
       <AppContext.Provider value={context}>
         <Header/>
         <div className="app">
@@ -81,7 +72,6 @@ function App() {
         </div>
         <Footer/>
       </AppContext.Provider>
-    </BrowserRouter>
   );
 }
 

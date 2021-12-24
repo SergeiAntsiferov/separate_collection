@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 0px 0px 2px 0px #808080;
+  }
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    outline: none;
+    color: #3B7302;
+  }
+} 
+
+
+
+

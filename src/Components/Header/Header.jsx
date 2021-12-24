@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import {Link} from "react-router-dom";
-import { AppContext } from '../../App';
+import { AppContext } from '../../utils/AppContext';
 import Button from '../Button/Button';
 import Logo from '../Logo/Logo';
 import './header.css';

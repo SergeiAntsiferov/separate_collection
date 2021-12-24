@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Button from '../../Button/Button';
-import classes from '../../Button/button.module.css'
-import { AppContext } from '../../../App';
+import classes from '../../Button/button.module.scss'
+import { AppContext } from '../../../utils/AppContext';
 import './recievePoint.scss'
 import { Link } from 'react-router-dom';
 
