@@ -1,13 +1,13 @@
 import React from 'react';
 import { garbageCategories } from '../../databases/garbageCategories';
 import GarbageCard from './GarbageCard/GarbageCard';
-import './GarbageCardList.css'
+import './GarbageCardList.scss'
 
 
 
 const GarbageCardList = () => {
     return (
-        <div className="GarbageCardList">
+        <div className="garbage-card-list">
             {garbageCategories.map((item) => {
                 return (
                     <GarbageCard

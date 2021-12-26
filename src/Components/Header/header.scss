@@ -2,20 +2,22 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
     height: 70px;
     padding: 8px;
   
     font-size: 20px;
-  }
  
-  .header__link {
+  &__link {
    text-align: center;
+
+    &:active {
+      outline: none;
+      color: #6C9D03;
+    }
   }
 
-  .header__link:active {
-    outline: none;
-    color: #6C9D03;
-  }
+}
 
   @media screen and (min-width: 769px) and (max-width: 1440px) {
 

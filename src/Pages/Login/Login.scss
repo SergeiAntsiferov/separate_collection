@@ -1,0 +1,30 @@
+.form { 
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 120px);
+    padding: 16px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    
+        height: 60%;
+        width: 80%;
+        padding: 8px;
+        border-radius: 20px;
+        background: #B6CCB633;
+    }
+
+    &__input::placeholder {
+        color: #808080;
+    }
+    
+}
+
+
+
+
+
+

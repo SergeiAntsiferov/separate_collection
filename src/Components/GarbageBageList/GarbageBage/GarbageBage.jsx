@@ -21,8 +21,8 @@ const GarbageBage = (props) => {
     }
 
     return (
-        <div className="garbageBage" onClick={sorting}>
-           <img className="garbageBage__image" src={image} alt={name} />
+        <div className="garbage-bage" onClick={sorting}>
+           <img className="garbage-bage__image" src={image} alt={name} />
         </div>
     );
 };

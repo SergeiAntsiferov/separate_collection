@@ -1,7 +1,7 @@
 import React from 'react';
 import { socialMedia } from '../../databases/socialMedia';
 import SocialMediaBage from '../SocialMediaBage/SocialMediaBage';
-import './footer.css';
+import './footer.scss';
 
 
 

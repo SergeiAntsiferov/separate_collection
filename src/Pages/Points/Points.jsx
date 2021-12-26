@@ -4,7 +4,7 @@ import classes from '../../Components/Button/button.module.scss'
 import RecievePointList from '../../Components/RecievePointList/RecievePointList';
 import GarbageBageList from '../../Components/GarbageBageList/GarbageBageList';
 import { AppContext } from '../../utils/AppContext';
-import './points.css'
+import './points.scss'
 
 const Points = () => {
     

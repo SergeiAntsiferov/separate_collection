@@ -21,6 +21,23 @@ a {
   }
 } 
 
+.input {
+  width: 50%;
+  height: 32px;
+  padding: 8px;
 
+  border: 1px solid #3B7302;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 16px;
+  text-align: center;
+  transition: 0.4s;
+
+  &:hover,
+  &:focus {
+      outline: none;
+      box-shadow: inset 0px 0px 8px 0px #808080;
+  }
+}
 
 

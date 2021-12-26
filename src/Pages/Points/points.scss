@@ -1,0 +1,23 @@
+.points {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px;
+
+    &__title {
+        width: 100%;
+        text-align: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-around;
+        width: calc(100% - 32px);
+    }
+
+}
+
+
+
+

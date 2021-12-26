@@ -1,12 +1,12 @@
 import React from 'react';
 import { garbageCategories } from '../../databases/garbageCategories';
 import GarbageBage from './GarbageBage/GarbageBage';
-import './GarbageBageList.css'
+import './GarbageBageList.scss'
 
 const GarbageBageList = () => {
 
     return (
-        <div className="GarbageBageList">
+        <div className="garbage-bage-list">
             {garbageCategories.map((item) => {
                 return (
                     <GarbageBage

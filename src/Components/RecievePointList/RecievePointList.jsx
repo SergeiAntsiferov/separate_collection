@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import RecievePoint from "./RecievePoint/RecievePoint";
 import CreatePoints from '../CreatePoints/CreatePoints'
 import { AppContext } from '../../utils/AppContext';
-import './RecievePointList.css'
+import './RecievePointList.scss'
 import { nanoid } from "../../utils/nanoid";
 
 

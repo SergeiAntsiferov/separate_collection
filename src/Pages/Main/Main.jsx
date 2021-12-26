@@ -1,6 +1,6 @@
 import React from 'react';
 import GarbageCardList from '../../Components/GarbageCardList/GarbageCardList';
-import './main.css';
+import './main.scss';
 
 const Main = () => {
     return (

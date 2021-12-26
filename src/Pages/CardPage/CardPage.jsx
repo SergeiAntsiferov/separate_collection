@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import CardDescription from '../../Components/CardDescription/CardDescription';
 import { cardDescriptions } from '../../databases/cardDescriptions';
+import './cardPage.scss'
 
 
 const CardPage = () => {

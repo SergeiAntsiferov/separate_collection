@@ -1,5 +1,5 @@
 import React from 'react';
-import './socialMediaBage.css';
+import './socialMediaBage.scss';
 
 
 
