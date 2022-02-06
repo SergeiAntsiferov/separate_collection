@@ -79,7 +79,10 @@ const CreatePoints = () => {
                             <div className="create-points__search-results">
                                 {suggestions.map((item) => {
                                     return (
-                                        <div  key = {Number(nanoid())} onClick={() => {
+                                        <div  
+                                        key = {Number(nanoid())}
+                                        className="create-points__search-result"
+                                        onClick={() => {
                                             setAddress(item.value)
                                             setCoords([item.data.geo_lat, item.data.geo_lon])
                                         }}>

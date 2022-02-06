@@ -17,10 +17,11 @@
         background: #B6CCB633;
     }
 
-    &__input::placeholder {
-        color: #808080;
+    &__input {
+        &::placeholder {
+            color: #808080;
+        }
     }
-    
 }
 
 

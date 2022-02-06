@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  // border: 1px solid red;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
   &:focus {
@@ -22,7 +23,7 @@ a {
 } 
 
 .input {
-  width: 50%;
+  width: 100%;
   height: 32px;
   padding: 8px;
 
